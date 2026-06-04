@@ -33,6 +33,43 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "SF.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "SF.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SF.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SF.Application.dll": {}
+        }
+      },
+      "SF.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/SF.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SF.Domain.dll": {}
+        }
+      },
+      "SF.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "SF.Application": "1.0.0",
+          "SF.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SF.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SF.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -67,11 +104,28 @@
         "microsoft.openapi.1.6.17.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
+    },
+    "SF.Application/1.0.0": {
+      "type": "project",
+      "path": "../SF.Application/SF.Application.csproj",
+      "msbuildProject": "../SF.Application/SF.Application.csproj"
+    },
+    "SF.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SF.Domain/SF.Domain.csproj",
+      "msbuildProject": "../SF.Domain/SF.Domain.csproj"
+    },
+    "SF.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../SF.Infrastructure/SF.Infrastructure.csproj",
+      "msbuildProject": "../SF.Infrastructure/SF.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Microsoft.AspNetCore.OpenApi >= 9.0.14"
+      "Microsoft.AspNetCore.OpenApi >= 9.0.14",
+      "SF.Application >= 1.0.0",
+      "SF.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -105,7 +159,14 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Henry\\Desktop\\SF\\SF.Application\\SF.Application.csproj": {
+              "projectPath": "C:\\Users\\Henry\\Desktop\\SF\\SF.Application\\SF.Application.csproj"
+            },
+            "C:\\Users\\Henry\\Desktop\\SF\\SF.Infrastructure\\SF.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Henry\\Desktop\\SF\\SF.Infrastructure\\SF.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
